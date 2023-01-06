@@ -1,0 +1,104 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <h1>Current Stats</h1>
+    {% for stat in user.current_stats %}
+    <div class="stat">
+        {% if stat.guts_level >= 0 and stat.guts_level < 10  %}
+        Guts: 1: Milquetoast
+
+        {% elif stat.guts_level >= 10 and stat.guts_level < 37  %}
+        Guts: 2: Bold
+
+        {% elif stat.guts_level >= 37 and stat.guts_level < 67  %}
+        Guts: 3: Staunch
+
+        {% elif stat.guts_level >= 67 and stat.guts_level < 112  %}
+        Guts: 4: Dauntless
+
+        {% elif stat.guts_level >= 112  %}
+        Guts: 5: Lionhearted
+        {% endif %}
+    </div>
+ 
+    <div class="stat">
+        {% if stat.knowledge_level >= 0 and stat.knowledge_level < 33  %}
+        Knowledge: 1: Oblivious
+
+        {% elif stat.knowledge_level >= 33 and stat.knowledge_level < 81  %}
+        Knowledge: 2: Learned
+
+        {% elif stat.knowledge_level >= 82 and stat.knowledge_level < 125  %}
+        Knowledge: 3: Scholarly
+
+        {% elif stat.knowledge_level >= 126 and stat.knowledge_level < 191  %}
+        Knowledge: 4: Encyclopedic
+
+        {% elif stat.knowledge_level >= 191  %}
+        Knowledge: 5: Erudite
+        {% endif %}
+    </div>
+ 
+    <div class="stat">
+        {% if stat.charisma_level >= 0 and stat.charisma_level < 5  %}
+        Charm: 1: Existent
+    
+        {% elif stat.charisma_level >= 5 and stat.charisma_level < 51  %}
+        Charm: 2: Head-Turning
+    
+        {% elif stat.charisma_level >= 51 and stat.charisma_level < 91  %}
+        Charm: 3: Suave
+    
+        {% elif stat.charisma_level >= 91 and stat.charisma_level < 132  %}
+        Charm: 4: Charismatic
+    
+        {% elif stat.charisma_level >= 132  %}
+        Charm: 5: Debonair
+        {% endif %}
+    </div>
+
+  
+ 
+
+    <div class="stat">
+        {% if stat.kindness_level >= 0 and stat.kindness_level < 13  %}
+        Kindness: 1: Inoffensive
+    
+        {% elif stat.kindness_level >= 13 and stat.kindness_level < 46  %}
+        Kindness: 2: Considerate
+    
+        {% elif stat.kindness_level >= 46 and stat.kindness_level < 93  %}
+        Kindness: 3: Empathetic
+    
+        {% elif stat.kindness_level >= 93 and stat.kindness_level < 135  %}
+        Kindness: 4: Selfless
+    
+        {% elif stat.kindness_level >= 135  %}
+        Kindness: 5: Angelic
+        {% endif %}
+    </div>
+
+
+
+
+    <div class="stat">
+        {% if stat.charisma_level >= 0 and stat.charisma_level < 11  %}
+        Proficiency: 1: Bumbling
+    
+        {% elif stat.guts_level >= 11 and stat.charisma_level < 33  %}
+        Proficiency: 2: Decent
+    
+        {% elif stat.charisma_level >= 33 and stat.charisma_level < 59  %}
+        Proficiency: 3: Skilled
+    
+        {% elif stat.charisma_level >= 59 and stat.charisma_level < 86  %}
+        Proficiency: 4: Masterful
+    
+        {% elif stat.charisma_level >= 86  %}
+        Proficiency: 5: Transcendent
+        {% endif %}
+    </div>
+    {% endfor %}
+    
+
+    
+    {% endblock %}

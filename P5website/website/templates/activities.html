@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Activities{% endblock %}
+{%block content%}
+<link rel="stylesheet" href="static\activity.html">
+<h1>Add Activities</h1>
+<ul class="list-group list-group-flush" id="activity">
+    {%for activity in user.activities%}
+    <li class="list-group-item">
+      <div id="main_activity">
+        {{activity.activity_name}}
+      </div>
+        {% if activity.guts_effect != '' %}
+        Guts: {{activity.guts_effect}}+
+        {% endif %}
+
+        {% if activity.proficency_effect != '' %}
+        Proficency: {{activity.proficency_effect}}+
+        {% endif %}
+
+        {% if activity.charisma_effect != '' %}
+        Charisma: {{activity.charisma_effect}}+
+        {% endif %}
+
+        {% if activity.kindness_effect != '' %}
+        Kindness: {{activity.kindness_effect}}+
+        {% endif %}
+
+        {% if activity.knowledge_effect != '' %}
+        Knowledge: {{activity.knowledge_effect}}+
+        {% endif %}
+
+        <button type="button" class="btn btn-dark" onClick="CompletedActivity({{ activity.id }})" style="float: right">Submit Activity</button>
+        <button type="button" class="close" style="float: right" onClick="deleteActivity({{ activity.id }})">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        <li class="dropdown-menu"></li>
+    </li>
+    {%endfor%}
+
+</ul>
+<form method="POST">
+    <textarea name="new_activity" id="new_activity" class="form-control"></textarea>
+    <input type="number" name="Guts" id="Guts" placeholder="Guts">
+    <input type="number" name = "Knowledge" id="Knowledge" placeholder="Knowledge">
+    <input type="number" name = "Proficency" id="Proficency" placeholder="Proficency">
+    <input type="number" name = "Kindness" id="Kindness" placeholder="Kindness">
+    <input type="number" name = "Charm" id="Charm" placeholder="Charm">
+
+    <br />
+    <div align="center">
+      <button type="submit" class="btn btn-primary">Add Activity</button>
+    </div>
+  </form>
+
+  {%endblock%}

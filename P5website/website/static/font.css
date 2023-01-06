@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "P5Font";
+    src: url('static/P5Font.ttf') format('truetype');
+}
+
+body{
+    font-family: "P5Font";
+    color: white;
+}
+li{
+    color: black;
+    margin: 5px;
+}
+form{
+    margin: 10px;
+}
+
+.main_activity{
+    font-size: 25px;
+}
+
+.stat{
+    font-size: 35px;
+}

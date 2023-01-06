@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+
+
+
+
+
+
+
+
+    <h1>Current Stats</h1>
+    <canvas id="myCanvas" width="1000px" height="1000px"></canvas>
+    
+    <script>
+      // Get the canvas element
+      var canvas = document.getElementById('myCanvas');
+      // Get the canvas context
+      var context = canvas.getContext('2d');
+      context.strokeStyle = 'white';
+    
+      // Draw a circle
+      context.beginPath();
+      context.arc(600, 300, 250, 0, 2 * Math.PI);
+    
+      //context.arc(200, 150, 500, 0, 4 * Math.PI);
+      context.stroke();
+    
+    
+    </script>
+    
+    
+    <script>
+         var canvas = document.getElementById('myCanvas');
+      var context2 = canvas.getContext('2d');
+      context2.fillStyle = 'blue'
+      context2.arc(600,300,72,0,Math.pi/5);
+      context2.fill();
+      context2.stroke();
+    </script>
+    
+    <script>
+        var guts_names = ['Milquetoast','Bold','Staunch','Dauntless','Dauntless'];
+        var guts_points =[0,10,37,67,112]
+      
+    
+        var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    
+    context.beginPath();
+    context.moveTo(600, 300);
+    context.strokeStyle = 'White';
+    context.lineTo(600, 50);
+    context.moveTo(600, 300);
+    
+    context.lineTo(672, 62);
+    //context.lineTo(600, 600);
+    //x,y
+    
+    // Stroke the triangle
+    context.arc(600,300,72,0,Math.pi/5);
+    context.stroke();
+    context.fill();
+    </script>
+    
+    {% endblock %}
+    
